@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace CarLotSimulator
@@ -9,6 +10,7 @@ namespace CarLotSimulator
         {
             
             var cynthiaLot = new CarLot();
+            
 
 
             
@@ -21,6 +23,9 @@ namespace CarLotSimulator
             cynthiasRover.IsDrivable = true;
 
             cynthiaLot.ListOfCars.Add(cynthiasRover);
+            Car.CarCounter();
+
+
 
             var georgesToyota = new Car() 
             { 
@@ -33,18 +38,29 @@ namespace CarLotSimulator
             };
 
             cynthiaLot.ListOfCars.Add(georgesToyota);
+            Car.CarCounter();
+
 
             var rheasHonda = new Car( 2012, "Honda", "Accord", "put put", "bang bang", true);
-
+                       
             cynthiaLot.ListOfCars.Add(rheasHonda);
+            Car.CarCounter();
+
+            Console.WriteLine();
 
             foreach (var item in cynthiaLot.ListOfCars)
             {
+                
                 Console.WriteLine($"Year: {item.Year} Make: {item.Make} Model: {item.Model}\n");
+                
             }
 
             
+
             
+
+            
+
             cynthiasRover.MakeHonkNoise(cynthiasRover.HonkNoise);
             georgesToyota.MakingEngineNoise(georgesToyota.EngineNoise);
             rheasHonda.MakingEngineNoise(rheasHonda.EngineNoise);
